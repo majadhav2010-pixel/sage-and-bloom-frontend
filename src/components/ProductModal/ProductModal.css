@@ -1,0 +1,243 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(58, 54, 46, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: var(--off-white);
+  border-radius: 30px;
+  max-width: 920px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.35);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--off-white);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--moss);
+  z-index: 5;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.08);
+  background: var(--paper);
+}
+
+.modal-img {
+  position: relative;
+  background: var(--paper);
+}
+
+.modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 340px;
+}
+
+.modal-body {
+  padding: 44px 40px;
+}
+
+.modal-body .product-tag {
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  color: var(--sage-deep);
+  font-family: 'Jost', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+.modal-body h3 {
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.modal-body .price {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  display: block;
+  font-family: 'Fraunces', serif;
+  color: var(--moss);
+  font-weight: 600;
+}
+
+.modal-body .desc {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 14px 0 22px;
+  line-height: 1.5;
+}
+
+.modal-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.modal-meta div {
+  background: var(--cream);
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.modal-meta span {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.modal-meta b {
+  font-size: 0.86rem;
+  color: var(--moss);
+  font-weight: 500;
+}
+
+.modal-section {
+  margin-bottom: 20px;
+}
+
+.modal-section h5 {
+  font-family: 'Jost', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--sage-deep);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.modal-section p,
+.modal-section li {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.modal-section ul {
+  padding-left: 0;
+}
+
+.modal-section li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.modal-section li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--sage);
+}
+
+.qty-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.qty-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.qty-selector button {
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  color: var(--moss);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.qty-selector button:hover {
+  background: var(--paper);
+}
+
+.qty-selector span {
+  width: 34px;
+  text-align: center;
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+
+.modal-btns {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-btns button {
+  flex: 1;
+  justify-content: center;
+}
+
+@media (max-width: 860px) {
+  .modal {
+    grid-template-columns: 1fr;
+  }
+  .modal-img img {
+    min-height: 220px;
+    max-height: 320px;
+  }
+  .modal-body {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 540px) {
+  .modal-meta {
+    grid-template-columns: 1fr;
+  }
+  .modal-btns {
+    flex-direction: column;
+  }
+}

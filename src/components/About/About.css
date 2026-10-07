@@ -1,0 +1,127 @@
+.about {
+  padding: 130px 0 110px;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-visual .soap-frame {
+  aspect-ratio: 1 / 1.05;
+}
+
+.about-visual .soap-frame.small {
+  position: absolute;
+  width: 46%;
+  bottom: -38px;
+  right: -42px;
+  border: 6px solid var(--cream);
+  aspect-ratio: 1 / 1;
+}
+
+.about-copy h2 {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  margin: 16px 0 22px;
+}
+
+.about-copy p {
+  color: var(--ink-soft);
+  font-size: 1.03rem;
+  margin-bottom: 16px;
+}
+
+.about-facts {
+  display: flex;
+  gap: 36px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.about-facts div {
+  border-left: 2px solid var(--sage);
+  padding-left: 16px;
+}
+
+.about-facts b {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  color: var(--moss);
+  line-height: 1.2;
+}
+
+.about-facts span {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 992px) {
+  .about {
+    padding: 70px 0 60px;
+  }
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .about-visual {
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .about-visual .soap-frame.small {
+    right: -16px;
+    bottom: -24px;
+    width: 44%;
+  }
+}
+
+@media (max-width: 640px) {
+  .about {
+    padding: 50px 0;
+  }
+  .about-visual {
+    max-width: 320px;
+    margin: 0 auto 24px;
+  }
+  .about-visual .soap-frame.small {
+    right: -10px;
+    bottom: -16px;
+    border-width: 4px;
+  }
+  .about-copy h2 {
+    font-size: 1.8rem;
+    margin: 12px 0 16px;
+  }
+  .about-copy p {
+    font-size: 0.95rem;
+  }
+  .about-facts {
+    gap: 16px;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-facts div {
+    padding-left: 10px;
+  }
+  .about-facts b {
+    font-size: 1.25rem;
+  }
+  .about-facts span {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-facts {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
